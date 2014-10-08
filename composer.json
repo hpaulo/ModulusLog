@@ -1,0 +1,40 @@
+{
+    "name" : "modulus/modulus-form",
+    "description" : "Zend Framework 2 Logger",
+    "type" : "library",
+    "homepage": "https://github.com/ZF2-Modulus/ModulusLog",
+    "authors": [
+        {
+            "name": "Leandro Luiz Lugaresi",
+            "email": "leandrolugaresi92@gmail.com",
+            "homepage": "http://www.leandrolugaresi.com.br"
+        }
+    ],
+    "license": "GPLv3",
+    "keywords" : [
+        "zend",
+        "zend framework 2",
+        "zf2",
+        "logger",
+        "log",
+        "modulusCMF"
+    ],
+    "require" : {
+        "php" : ">=5.3.3",
+        "zendframework/zend-log" : "2.*",
+        "zendframework/zend-di" : "2.*",
+        "zendframework/zend-eventmanager" : "2.*",
+        "zendframework/zend-mvc" : "2.*"
+    },
+    "require-dev" : {
+        "phpunit/phpunit": "4.*",
+        "mockery/mockery" : "0.9.*",
+        "satooshi/php-coveralls": "dev-master",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    }
+}
