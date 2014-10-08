@@ -32,6 +32,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $this->logger = new \Zend\Log\Logger;
         $this->logger->addWriter($this->writer);
+        date_default_timezone_set("America/Sao_Paulo");
 
         $this->instance = new Request($this->logger);
     }

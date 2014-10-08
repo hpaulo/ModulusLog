@@ -22,7 +22,11 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
         $this->logger = new Logger();
         $this->logger->addWriter($writer);
 
-        $authenticationService = \Mockery::mock('Zend\Authentication\AuthenticationService');
+        $authenticationService = \Mockery::mock('\Zend\Authentication\AuthenticationService')
+                    ->shouldReceive('hasIdentity')
+                    ->andReturn(false)
+                    ->mock();
+
         $this->logger->setAuthenticationService(
             $authenticationService
         );

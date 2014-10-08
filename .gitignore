@@ -3,4 +3,4 @@ vendor
 *.swp
 tests/build
 composer.phar
-
+composer.lock
