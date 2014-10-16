@@ -1,10 +1,13 @@
 # Modulus CMF - ModulusLog
 
+This module was based on [eddiejaoude/zf2-logger](https://github.com/eddiejaoude/zf2-logger).
+
 #### Zend Framework 2 Event Logger.
 * Log incoming Requests data with host name
+* Log events for debbuging
 * Manually log your application information with priorities (i.e. emerg..debug)
 * Change your logging output via config without changing code
-* Multiple logging outputs (i.e. file(s), stdout, stderr etc)
+* Multiple logging outputs (`Zend\Log\Writer` classes)
 * Filter errors to log per environment (i.e production > error, development > debug)
 * Default log information includes (Session Id, Host, IP, authorizedUser)
 
@@ -36,8 +39,6 @@ Update your dependencies `php composer.phar update`
    //...
 ```
 
-Then you are good to go. Logging READY! All requests & responses will be logged automatically as ```DEBUG```
-
 ---
 
 ## Example usage of manual logging & prority
@@ -63,7 +64,7 @@ As the ```Zend\Log\Logger``` is returned from the Service call, one can use the 
 Instead of using `ModulusLog\Logger` in your code, put an `Alias` in your service manager, therefore allowing you to swap out different logger libraries later on without modifying your code & usage.
 
 i.e.
-```
+```php
     //...
     'aliases'    => array(
         // alias used, so can be swapped out later without changing any code
