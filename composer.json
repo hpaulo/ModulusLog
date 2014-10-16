@@ -1,5 +1,5 @@
 {
-    "name" : "modulus/modulus-form",
+    "name" : "modulus/modulus-log",
     "description" : "Zend Framework 2 Logger",
     "type" : "library",
     "homepage": "https://github.com/ZF2-Modulus/ModulusLog",
