@@ -31,7 +31,7 @@ class LoggerFactory implements FactoryInterface
         $config = $config['modulus_log'];
         $this->logger = new Logger();
 
-        $this->configuration($config);
+        $this->configuration($config, $serviceLocator);
         $this->writerCollection($config);
         $this->execute();
 
@@ -80,10 +80,11 @@ class LoggerFactory implements FactoryInterface
     /**
      * @param array $config
      */
-    private function configuration(array $config)
+    private function configuration(array $config, ServiceLocatorInterface $serviceLocator)
     {
         if (!empty($config['registerErrorHandler'])) {
             $config['registerErrorHandler'] === false ?: Logger::registerErrorHandler( $this->logger );
+            $config['registerErrorHandler'] === false ?: Logger::registerFatalErrorShutdownFunction( $this->logger );
         }
         if (!empty($config['registerExceptionHandler'])) {
             $config['registerExceptionHandler'] === false ?: Logger::registerExceptionHandler( $this->logger );
