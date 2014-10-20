@@ -21,8 +21,9 @@ class Module
             new RequestListener($e->getApplication()->getServiceManager()->get('ModulusLog\Logger'))
         );
 
-        $response   = new ResponseListener($e->getApplication()->getServiceManager()->get('ModulusLog\Logger'));
-        $eventManager->attach($response);
+        $eventManager->attach(
+            new ResponseListener($e->getApplication()->getServiceManager()->get('ModulusLog\Logger'))
+        );
 
         return;
     }
@@ -43,7 +44,7 @@ class Module
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src',
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
         );
